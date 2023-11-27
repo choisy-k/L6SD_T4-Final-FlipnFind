@@ -20,7 +20,7 @@ This is a card-matching game, with the features listed below:
 ### Sources, resources and references:
 1. Card-matching games:
 - https://github.com/GiorgioCitterio/MemoryMAUI
-- https://github.com/shawyunz/matching.maui#readme
+- https://github.com/shawyunz/Matching.Maui
 - (Image source) https://www.flaticon.com/
 2. Theme:
   - [.NET MAUI & Themes - Go beyond dark- and light themes](https://youtu.be/0cY8iCz50fI)
