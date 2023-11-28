@@ -10,6 +10,7 @@ This is a card-matching game, with the features listed below:
 - Feedback form
 
 ### Dependency packages installed:
+- CommunityToolkit.Maui for StatusBar's Behavior
 - CommunityToolkit.Mvvm for MVVM Architecture Pattern implementation
 - akgul.Maui.DataGrid for DataGrid control of the scoreboard
 - PropertyChanged.Fody to notify classes with INotigyPropertyChanged implemented
@@ -32,3 +33,5 @@ This is a card-matching game, with the features listed below:
   - (Animation source) https://lottiefiles.com/
 5. Database Encryption:
 - [Encrypt Database with SQLite-net and .NET MAUI (or Xamarin.Forms!)](https://youtu.be/O1UQfoh4710)
+6. StatusBar Behavior:
+  - [Change Status Bar Color for Android and iOS in .NET MAUI](https://www.youtube.com/watch?v=dWj0PdImH10)
