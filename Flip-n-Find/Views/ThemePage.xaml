@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flip_n_Find.Views.ThemePage"
+             Title="Theme Option">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ImageButton">
+                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource ButtonBackgroundColor}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+        
+    <VerticalStackLayout Margin="20"
+                         Spacing="30"
+                         HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand">
+        <Label Text="Choose your theme"
+               FontSize="30"/>
+        <Frame>
+            <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Fantasy_Tapped"/>
+                </Frame.GestureRecognizers>
+            <VerticalStackLayout HorizontalOptions="Center">
+                <ImageButton Source="fan2.png"
+                             x:Name="FantasyButton"
+                             Clicked="FantasyButton_Clicked"/>
+                <Label Text="Fantasy"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+        <Frame>                
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Thriller_Tapped"/>
+            </Frame.GestureRecognizers>
+            <VerticalStackLayout HorizontalOptions="Center">
+                <ImageButton Source="thr4.png"
+                             x:Name="ThrillerButton"
+                             Clicked="ThrillerButton_Clicked"/>
+                <Label Text="Thriller"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+        <Frame>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Mystery_Tapped"/>
+            </Frame.GestureRecognizers>            
+            <VerticalStackLayout HorizontalOptions="Center">
+                <ImageButton Source="mys4.png"
+                             x:Name="MysteryButton"
+                             Clicked="MysteryButton_Clicked"/>
+                <Label Text="Mystery"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

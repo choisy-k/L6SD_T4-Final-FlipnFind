@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flip_n_Find.Views.ScoreboardPage"
+             xmlns:dg="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
+             xmlns:vm="clr-namespace:Flip_n_Find.ViewModels"
+             x:DataType="vm:ScoreboardViewModel"
+             Title="Scoreboard">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="dg:DataGrid">
+                <Setter Property="PullToRefreshCommand" Value="{Binding RefreshCommand}"/>
+                <Setter Property="IsRefreshing" Value="{Binding IsRefreshing}"/>
+                <Setter Property="HeaderBackground" Value="{DynamicResource TextColor}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource TextColor}"/>
+                <Setter Property="RowHeight" Value="40"/>
+                <Setter Property="HeaderHeight" Value="40"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid Margin="20"
+          RowDefinitions="Auto,*,Auto,*,Auto,*"
+          RowSpacing="15">
+        
+        <!--Easy section-->
+        <Label Grid.Row="0" Text="Level Easy"
+               FontSize="20" FontAttributes="Bold"/>
+        <ScrollView Grid.Row="1">
+            <dg:DataGrid ItemsSource="{Binding EasyScores}">
+                <dg:DataGrid.NoDataView>
+                    <Label Text="Oops, no data found!" HorizontalOptions="Center" VerticalOptions="Center" />
+                </dg:DataGrid.NoDataView>
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn Title="Score"
+                                       SortingEnabled="True"
+                                       PropertyName="TimeTaken"/>
+                    <dg:DataGridColumn Title="Moves" 
+                                       SortingEnabled="True" 
+                                       PropertyName="MoveCount"/>
+                    <dg:DataGridColumn Title="Date" 
+                                       SortingEnabled="True"
+                                       PropertyName="DateAchieved"/>
+                </dg:DataGrid.Columns>
+            </dg:DataGrid>
+        </ScrollView>
+        
+        <!--Medium section-->
+        <Label Grid.Row="2" Text="Level Medium"
+               FontSize="20" FontAttributes="Bold"/>
+        <ScrollView Grid.Row="3">
+            <dg:DataGrid ItemsSource="{Binding MediumScores}">
+                <dg:DataGrid.NoDataView>
+                    <Label Text="Oops, no data found!" HorizontalOptions="Center" VerticalOptions="Center" />
+                </dg:DataGrid.NoDataView>
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn Title="Score"
+                                       SortingEnabled="True"
+                                       PropertyName="TimeTaken"/>
+                    <dg:DataGridColumn Title="Moves" 
+                                       SortingEnabled="True" 
+                                       PropertyName="MoveCount"/>
+                    <dg:DataGridColumn Title="Date" 
+                                       SortingEnabled="True"
+                                       PropertyName="DateAchieved"/>
+                </dg:DataGrid.Columns>
+            </dg:DataGrid>
+        </ScrollView>
+        
+        <!--Hard section-->
+        <Label Grid.Row="4" Text="Level Hard"
+               FontSize="20" FontAttributes="Bold"/>
+        <ScrollView Grid.Row="5">
+            <dg:DataGrid ItemsSource="{Binding HardScores}">
+                <dg:DataGrid.NoDataView>
+                    <Label Text="Oops, no data found!" HorizontalOptions="Center" VerticalOptions="Center" />
+                </dg:DataGrid.NoDataView>
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn Title="Score"
+                                       SortingEnabled="True"
+                                       PropertyName="TimeTaken"/>
+                    <dg:DataGridColumn Title="Moves" 
+                                       SortingEnabled="True" 
+                                       PropertyName="MoveCount"/>
+                    <dg:DataGridColumn Title="Date" 
+                                       SortingEnabled="True"
+                                       PropertyName="DateAchieved"/>
+                </dg:DataGrid.Columns>
+            </dg:DataGrid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flip_n_Find.Views.LevelPage"
+             Title="Choose Level">
+    <VerticalStackLayout Padding="20" Spacing="30"
+                         HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand">
+        <StackLayout>
+            <Label Text="Test your memorization skill."
+                   FontSize="20"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Find all card pairs as fast as you can!"
+                   FontSize="20"
+                   HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+        <Label Text="Choose your tile level"
+               FontSize="30"
+               HorizontalOptions="Center"/>
+        <Button Text="Easy"
+                Padding="10"
+                x:Name="EasyButton"
+                Clicked="EasyButton_Clicked"/>
+        <Button Text="Medium"
+                Padding="10"
+                x:Name="MediumButton"
+                Clicked="MediumButton_Clicked"/>
+        <Button Text="Hard"
+                Padding="10"
+                x:Name="HardButton"
+                Clicked="HardButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

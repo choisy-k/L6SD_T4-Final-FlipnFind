@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flip_n_Find.Resources.Styles.Mystery">
+    <Color x:Key="BackgroundColor">#551767</Color>
+    <Color x:Key="TextColor">#ffded5</Color>
+    <Color x:Key="ButtonBackgroundColor">#271242</Color>
+</ResourceDictionary>

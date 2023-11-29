@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flip_n_Find.MainPage"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             Title="">
+    <!--Status Bar (the most upper notification bar) behaviour-->
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="Black"/>
+    </ContentPage.Behaviors>
+    
+    <Grid RowDefinitions="*,60">
+        <VerticalStackLayout Grid.Row="0"
+                             HorizontalOptions="Center"
+                             VerticalOptions="CenterAndExpand"
+                             Spacing="20">
+            <Image Source="logo.png"
+                   x:Name="logoFloat"
+                   HeightRequest="300"/>
+            <Button Text="Play"
+                    Padding="10"
+                    x:Name="startButton"
+                    Clicked="startButton_Clicked"/>
+            <Button Text="Scoreboard"
+                    Padding="10"
+                    x:Name="scoreButton"
+                    Clicked="scoreButton_Clicked"/>
+            <Button Text="Themes"
+                    Padding="10"
+                    x:Name="themeButton"
+                    Clicked="themeButton_Clicked"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="50,*,50"
+              Margin="10,0,10,0">
+            <ImageButton Grid.Column="0"
+                         Source="feedback.png"
+                         HeightRequest="35"
+                         BorderColor="Transparent"
+                         BackgroundColor="Transparent"
+                         x:Name="feedbackButton"
+                         Clicked="feedbackButton_Clicked"/>
+            <Label Grid.Column="1"
+                   Text="© Whimsicraft Studio Ltd., 2023"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="EndAndExpand"
+                   Padding="0,0,0,10"/>
+            <ImageButton Grid.Column="2"
+                         Source="link.png"
+                         HeightRequest="40"
+                         BorderColor="Transparent"
+                         BackgroundColor="Transparent"
+                         x:Name="creditButton"
+                         Clicked="creditButton_Clicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>
