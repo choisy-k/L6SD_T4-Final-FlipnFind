@@ -26,11 +26,12 @@ namespace Flip_n_Find.ViewModels
 
         public async void TimerAsync()
         {
-            while (!win)
+            while (!win) //timer will continues to run until win = true
             {
                 await Task.Delay(100);
-                TimeSpan ts = sw.Elapsed;
+                TimeSpan ts = sw.Elapsed; // retrieves elapsed time from the stopwatch and stored as Timespan variable
 
+                //update the UI on main thread
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Timer = String.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);

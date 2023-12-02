@@ -1,4 +1,3 @@
-using Flip_n_Find.Models;
 using Flip_n_Find.Models.Themes;
 using Flip_n_Find.ViewModels;
 using System.Diagnostics;
@@ -30,6 +29,7 @@ public partial class EasyPage : ContentPage
 		CreateGrid();
 	}
 
+    // the method will materialises 3 x 4 matrix with randomised set of numbers (6 sets)
     private void CreateGrid()
     {
         Random random = new Random();
@@ -38,8 +38,6 @@ public partial class EasyPage : ContentPage
         for (int i = 0; i < 6; i++)
         {
             int count = 0;
-            //int ro = 0; // Declare r outside the loop
-            //int co = 0; // Declare c outside the loop
 
             while (count < 2)
             {
@@ -50,29 +48,20 @@ public partial class EasyPage : ContentPage
                 {
                     matrixNum[r, c] = i + 1;
                     count++;
-                    //ro = r; // Update ro when successfully adding to usedIndices
-                    //co = c; // Update co when successfully adding to usedIndices
                 }
             }
-
-            // to see the output of matrix
-            //Debug.WriteLine($"Pair {i + 1}, Count {count}: Row = {ro}, Column = {co}");
-            //Debug.WriteLine("Matrix:");
-            //for (int row = 0; row < NumRows; row++)
-            //{
-            //    for (int col = 0; col < NumColumns; col++)
-            //    {
-            //        Debug.Write($"{matrixNum[row, col]} ");
-            //    }
-            //    Debug.WriteLine("");
-            //}
         }
     }
 
     private async void BackButton_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Warning!", "Exiting the level will reset the game. Are you sure you want to go back?", "Yes");
-        await Navigation.PopAsync();
+        bool result = await DisplayAlert("Warning!", "Exiting the level will reset the game. Are you sure you want to go back?", "Yes", "No");
+
+        if (result)
+        {
+            // User clicked "Yes"
+            await Navigation.PopAsync();
+        }
     }
 
     private async void ImageButton_Clicked(object sender, EventArgs e)
@@ -97,8 +86,11 @@ public partial class EasyPage : ContentPage
         await image.RotateYTo(0, 250, Easing.SpringOut);
 
         currentCardCount++;
+
+        //checking for pair matching
         if (currentCardCount >= 2)
         {
+            //when two cards have been selected, continue executing
             if (currentRow == Grid.GetRow(image) && currentColumn == Grid.GetColumn(image))
             {
                 running = true;
@@ -109,6 +101,7 @@ public partial class EasyPage : ContentPage
 
             if (matrixNum[Grid.GetRow(image), Grid.GetColumn(image)] == matrixNum[Grid.GetRow(imgTurned), Grid.GetColumn(imgTurned)])
             {
+                //if there's a match between current card (image) and previously turned card (imgTurned), updates the game state
                 currentCardCount = 0;
                 image.IsEnabled = false;
                 imgTurned.IsEnabled = false;
@@ -121,7 +114,6 @@ public partial class EasyPage : ContentPage
                     sw.Stop();
                     vm.AddData();
                     await Navigation.PushAsync(new CongratsPage("Easy"));
-                    //await DisplayAlert("Woo hoo!", "You won!", "OK");
                 }
 
                 running = true;
@@ -158,7 +150,6 @@ public partial class EasyPage : ContentPage
     private void CardTheme(ImageButton image)
     {
         string selectedTheme = SelectedTheme.GetCurrentTheme();
-        //Debug.WriteLine($"Selected theme before switch: {selectedTheme}");
 
         var row = Grid.GetRow(image);
         var col = Grid.GetColumn(image);
@@ -180,6 +171,5 @@ public partial class EasyPage : ContentPage
             default:
                 break;
         }
-        //Debug.WriteLine($"Selected theme after switch: {selectedTheme}");
     }
 }

@@ -1,6 +1,4 @@
-using Flip_n_Find.Data;
 using Flip_n_Find.Models;
-using Flip_n_Find.ViewModels;
 
 namespace Flip_n_Find.Views;
 
@@ -41,15 +39,10 @@ public partial class CongratsPage : ContentPage
         }
         var seeScore = scoreList.Skip(Math.Max(0, scoreList.Count() - 3));
         scoreView.ItemsSource = seeScore;
-
-        //      List<EasyScores> score = await App.DataBase.GetEasyScoreList();
-        //      var seeScore = score.Skip(Math.Max(0, score.Count() - 3));
-        //scoreView.ItemsSource = seeScore;
     }
 
     private async void mainMenuButton_Clicked(object sender, EventArgs e)
     {
-        //await Navigation.PushAsync(new MainPage());
         await Navigation.PopToRootAsync();
     }
 }

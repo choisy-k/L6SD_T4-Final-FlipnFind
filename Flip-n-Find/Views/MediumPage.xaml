@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Flip_n_Find.Views.MediumPage"
              Title="Medium">
-    
-    <!--Move and button section-->
+
+    <!--Move counter and button section-->
     <StackLayout Margin="10">
         <StackLayout Orientation="Horizontal"
                  Margin="10">

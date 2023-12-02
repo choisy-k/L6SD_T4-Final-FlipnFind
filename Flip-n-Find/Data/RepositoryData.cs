@@ -90,7 +90,7 @@ namespace Flip_n_Find.Data
             }
         }
 
-        // retrieve the saved scores
+        // retrieve the saved scores into lists
         public async Task<List<EasyScores>> GetEasyScoreList()
         {
             try
@@ -124,29 +124,5 @@ namespace Flip_n_Find.Data
             catch (Exception) { }
             return new List<HardScores> { };
         }
-
-
-        // use this to test whether data is saved or not
-        //public async Task<bool> AddScoreEasy(EasyScores data)
-        //{
-        //    //int result = default;
-        //    try
-        //    {
-        //        await Init();
-        //        int result = await _connect.InsertAsync(new EasyScores()
-        //        {
-        //            TimeTaken = data.TimeTaken,
-        //            MoveCount = data.MoveCount,
-        //            DateAchieved = data.DateAchieved,
-        //        });
-        //        Debug.WriteLine($"Rows affected: {result}");
-        //        return result > 0; // If result is greater than 0, it was successful
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine("Error: " + ex.ToString());
-        //        return false; // Return false in case of an exception
-        //    }
-        //}
     }
 }

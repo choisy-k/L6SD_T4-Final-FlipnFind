@@ -28,6 +28,8 @@ public partial class HardPage : ContentPage
         BindingContext = vm;
         CreateGrid();
 	}
+
+    // the method will materialises 5 x 4 matrix with randomised set of numbers (10 sets)
     private void CreateGrid()
     {
         Random random = new Random();
@@ -52,8 +54,13 @@ public partial class HardPage : ContentPage
     }
     private async void BackButton_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Warning!", "Exiting the level will reset the game. Are you sure you want to go back?", "Yes");
-        await Navigation.PopAsync();
+        bool result = await DisplayAlert("Warning!", "Exiting the level will reset the game. Are you sure you want to go back?", "Yes", "No");
+
+        if (result)
+        {
+            // User clicked "Yes"
+            await Navigation.PopAsync();
+        }
     }
 
     private async void ImageButton_Clicked(object sender, EventArgs e)
@@ -65,19 +72,24 @@ public partial class HardPage : ContentPage
         if (!running || image.IsEnabled == false) return;
         else running = false;
 
+        //start stopwatch when card is tapped
         if (!sw.IsRunning)
         {
             sw.Start();
             vm.TimerAsync();
         }
 
+        // Animation of the card flipping, while matching the image with the theme set
         await image.RotateYTo(90, 250, Easing.CubicIn);
         CardTheme(image);
         await image.RotateYTo(0, 250, Easing.CubicIn);
 
         currentCardCount++;
+
+        //checking for pair matching
         if (currentCardCount >= 2)
         {
+            //when two cards have been selected, continue executing
             if (currentRow == Grid.GetRow(image) && currentColumn == Grid.GetColumn(image))
             {
                 running = true;
@@ -88,6 +100,7 @@ public partial class HardPage : ContentPage
 
             if (matrixNum[Grid.GetRow(image), Grid.GetColumn(image)] == matrixNum[Grid.GetRow(imgTurned), Grid.GetColumn(imgTurned)])
             {
+                //if there's a match between current card (image) and previously turned card (imgTurned), updates the game state
                 currentCardCount = 0;
                 image.IsEnabled = false;
                 imgTurned.IsEnabled = false;
@@ -105,6 +118,7 @@ public partial class HardPage : ContentPage
                 running = true;
                 return;
             }
+            // If the cards don't match, reset the images and flip them back
             await Task.Delay(500);
             await Task.WhenAll(
                 image.RotateYTo(90, 250, Easing.CubicIn),

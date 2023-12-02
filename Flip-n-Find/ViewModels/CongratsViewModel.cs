@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Flip_n_Find.Models;
-using Java.Lang;
 
 namespace Flip_n_Find.ViewModels
 {
@@ -30,7 +29,7 @@ namespace Flip_n_Find.ViewModels
                     scoreList = easyScore
                         .OrderByDescending(item => item.TimeTaken)
                         .Take(1)  // Take the latest entry
-                        .Select(item => new { TimeTaken = item.TimeTaken, MoveCount = item.MoveCount })
+                        .Select(item => new { item.TimeTaken, item.MoveCount })
                         .Cast<object>()
                         .ToList();
                     break;
@@ -39,7 +38,7 @@ namespace Flip_n_Find.ViewModels
                     scoreList = mediumScore
                         .OrderByDescending(item => item.TimeTaken)
                         .Take(1)
-                        .Select(item => new { TimeTaken = item.TimeTaken, MoveCount = item.MoveCount })
+                        .Select(item => new { item.TimeTaken, item.MoveCount })
                         .Cast<object>()
                         .ToList();
                     break;
@@ -48,7 +47,7 @@ namespace Flip_n_Find.ViewModels
                     scoreList = hardScore
                         .OrderByDescending(item => item.TimeTaken)
                         .Take(1)
-                        .Select(item => new { TimeTaken = item.TimeTaken, MoveCount = item.MoveCount })
+                        .Select(item => new { item.TimeTaken, item.MoveCount })
                         .Cast<object>()
                         .ToList();
                     break;

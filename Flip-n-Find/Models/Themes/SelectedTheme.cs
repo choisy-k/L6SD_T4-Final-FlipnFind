@@ -12,7 +12,7 @@
             }
 
             Preferences.Set("theme", defaultTheme );
-            return defaultTheme; //retrieves default theme if no other theme is selected
+            return defaultTheme; //retrieves default theme (Fantasy) if no other theme is selected
         }
     }
 }

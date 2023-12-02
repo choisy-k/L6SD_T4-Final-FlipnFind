@@ -4,7 +4,7 @@
              x:Class="Flip_n_Find.Views.HardPage"
              Title="Hard">
 
-    <!--Move and button section-->
+    <!--Move counter and button section-->
     <StackLayout Margin="10">
         <StackLayout Orientation="Horizontal"
                  Margin="10">

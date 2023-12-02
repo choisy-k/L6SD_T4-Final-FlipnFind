@@ -31,6 +31,7 @@ namespace Flip_n_Find
             builder.Services.AddTransient<CongratsPage>();
             builder.Services.AddTransient<ScoreboardPage>();
 
+            // initialise the database path and register a singleton services so the app can use a single instance of RepositoryData class throughout its lifetime.
             string dbPath = FileAccessHelper.GetFileLocalPath("FlipnFind_encrypted.db3");
             builder.Services.AddSingleton(s => ActivatorUtilities.CreateInstance<RepositoryData>(s, dbPath));
 

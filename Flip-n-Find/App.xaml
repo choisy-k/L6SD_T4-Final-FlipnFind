@@ -5,12 +5,10 @@
              x:Class="Flip_n_Find.App">
     <Application.Resources>
         <ResourceDictionary>
-            <!--<ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>-->
-
-            <!--Creating change-theme feature with DynamicResource (allows change during runtime)-->
+            <!--
+            Setting the types that its values will change during runtime with DynamicResource.
+            To access the resources, go to Resources > Styles
+            -->
             <Style TargetType="Shell" ApplyToDerivedTypes="True">
                 <Setter Property="Shell.BackgroundColor" Value="{DynamicResource ButtonBackgroundColor}"/>
             </Style>

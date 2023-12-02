@@ -6,7 +6,7 @@
              x:DataType="vm:EasyViewModel"
              Title="Easy">
 
-    <!--Move and button section-->
+    <!--Move counter and button section-->
     <StackLayout Margin="10">
         <StackLayout Orientation="Horizontal"
                      Margin="10">

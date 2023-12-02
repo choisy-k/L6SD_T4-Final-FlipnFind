@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
 using Flip_n_Find.Data;
 using Flip_n_Find.Models.Themes;
-using Flip_n_Find.Views;
 
 namespace Flip_n_Find
 {
@@ -12,19 +11,17 @@ namespace Flip_n_Find
         {
             InitializeComponent();
 
-            DataBase = repo;
+            DataBase = repo; // allowing global access to RepositoryData class
 
             MainPage = new AppShell();
-            //MainPage = new CongratsPage("Medium");
 
-            // callback to ThemeChangedMessage
+            // callback to ThemeChangedMessage class
             WeakReferenceMessenger.Default.Register<ThemeChangedMessage>(this, (r, m) =>
             {
                 LoadTheme(m.Value);
             });
 
             var theme = Preferences.Get("Fantasy", "Fantasy");
-            //var theme = "Fantasy";
             LoadTheme(theme);
         }
 

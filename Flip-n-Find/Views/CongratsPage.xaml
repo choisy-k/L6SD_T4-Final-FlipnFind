@@ -15,18 +15,6 @@
                            RepeatCount="-1"
                            HeightRequest="200"
                            HorizontalOptions="Center"/>
-        <!--<Label FontSize="14"
-               FontAttributes="Bold"
-               VerticalOptions="Center" 
-               HorizontalOptions="Center">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="You finished this level in "/>
-                    <Span Text="{Binding TimeTaken, StringFormat='{0:F0} seconds '}"/>
-                    <Span Text="{Binding MoveCount, StringFormat='with {0:F0} moves'}"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>-->
         <Button Text="See your latest scores"
                 Clicked="Button_Clicked"
                 Padding="10"

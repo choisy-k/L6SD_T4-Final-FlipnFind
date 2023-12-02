@@ -1,5 +1,5 @@
 # L6SD_T4-Final-FlipnFind
-Term 4 Second Assessment Part __ on __ ____ 2023
+Term 4 Second Assessment on 5 November 2023
 
 A mobile app project using .NET MAUI and SQLITE implementation.
 
@@ -7,7 +7,7 @@ This is a card-matching game, with the features listed below:
 - Three levels of difficulty: Easy (4x3), Medium (4x4) and Hard (4x5)
 - Theme options: Fantasy, Thriller, Mystery. Each theme affected the images shown on the card.
 - Scoreboard: Showing the score of each level the user has achieved, with a sorting feature.
-- Feedback form
+- Feedback form as a form of maintenance management.
 
 ### Dependency packages installed:
 - CommunityToolkit.Maui for StatusBar's Behavior
@@ -35,3 +35,5 @@ This is a card-matching game, with the features listed below:
 - [Encrypt Database with SQLite-net and .NET MAUI (or Xamarin.Forms!)](https://youtu.be/O1UQfoh4710)
 6. StatusBar Behavior:
   - [Change Status Bar Color for Android and iOS in .NET MAUI](https://www.youtube.com/watch?v=dWj0PdImH10)
+  7. Unit Testing:
+  [Unit Testing .NET MAUI Apps with xUnit](https://youtu.be/C9vIDLQwc7M)

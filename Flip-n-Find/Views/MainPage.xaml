@@ -10,6 +10,7 @@
     </ContentPage.Behaviors>
     
     <Grid RowDefinitions="*,60">
+        <!--main view: logo and three buttons-->
         <VerticalStackLayout Grid.Row="0"
                              HorizontalOptions="Center"
                              VerticalOptions="CenterAndExpand"
@@ -31,6 +32,7 @@
                     Clicked="themeButton_Clicked"/>
         </VerticalStackLayout>
 
+        <!--footer view: links and company name-->
         <Grid Grid.Row="1"
               ColumnDefinitions="50,*,50"
               Margin="10,0,10,0">

@@ -37,6 +37,7 @@ namespace Flip_n_Find.ViewModels
             }
         }
 
+        // selected theme's key is stored in the app's preferences and send a message to ThemeChangedMessage
         partial void OnSelectedThemeChanged(Themes value)
         {
             if (value == null) { return; }

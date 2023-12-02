@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Flip_n_Find.Views.ThemePage"
              Title="Theme Option">
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="ImageButton">
@@ -24,6 +25,7 @@
                          VerticalOptions="CenterAndExpand">
         <Label Text="Choose your theme"
                FontSize="30"/>
+        <!--Fantasy-->
         <Frame>
             <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Fantasy_Tapped"/>
@@ -37,6 +39,7 @@
                        HorizontalOptions="Center"/>
             </VerticalStackLayout>
         </Frame>
+        <!--Thriller-->
         <Frame>                
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Thriller_Tapped"/>
@@ -50,6 +53,7 @@
                        HorizontalOptions="Center"/>
             </VerticalStackLayout>
         </Frame>
+        <!--Mystery-->
         <Frame>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Mystery_Tapped"/>
